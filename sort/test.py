@@ -39,8 +39,28 @@ def merge(l1, l2):
     return res
 
 
+def quick_sort(nums, lo, hi):
+    if lo < hi:
+        mid = partition(nums, lo, hi)
+        quick_sort(nums, lo, mid-1)
+        quick_sort(nums, mid+1, hi)
+    return nums
+
+
+def partition(nums, lo, hi):
+    pivot = lo
+    index = pivot + 1
+    for i in range(index, hi):
+        if nums[i] < nums[pivot]:
+            nums[i], nums[index] = nums[index], nums[i]
+            index += 1
+    nums[pivot], nums[index-1] = nums[index-1], nums[pivot]
+    return index-1
+
+
 array = [3, 2, 1, 15, 26, 72, 36, 10]
 print(bubble_sort(array))
 print(insertion_sort(array))
 print(merge_sort(array))
+print(quick_sort(array, 0, len(array)-1))
 
