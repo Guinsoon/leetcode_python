@@ -13,7 +13,7 @@ class Solution:
         dummy.next = head
         pre = dummy
         for i in range(m-1):
-         pre = pre.next
+            pre = pre.next
         start = pre.next
         then = start.next
         for i in range(n-m):
