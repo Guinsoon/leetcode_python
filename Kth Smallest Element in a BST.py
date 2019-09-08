@@ -7,4 +7,14 @@ class TreeNode:
 
 
 class Solution:
-    def kthSmallest(self, root: TreeNode, k: int) -> int:
+    def kthSmallest(self, root, k):
+        res = []
+        self.helper(root, res)
+        return res[k-1]
+
+    def helper(self, root, res):
+        if not root:
+            return
+        self.helper(root.left, res)
+        res.append(root.val)
+        self.helper(root.right, res)
