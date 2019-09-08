@@ -8,3 +8,14 @@ class Node:
 
 class Solution:
     def preorder(self, root):
+        res = []
+        self.helper(res, root)
+        return res
+
+    def helper(self, res, node):
+        if not node:
+            return
+        res.append(node.val)
+        for item in node.children:
+            self.helper(res, item)
+
