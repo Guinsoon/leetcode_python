@@ -11,11 +11,25 @@ class Solution:
                 dp[i] = dp[i] + dp[i - num]
         return dp[target]
 
+    def findTargetSumWays2(self, nums, S):
+        res = 0
+        self.dfs(nums, res, 0, S)
+        return res
+
+    def dfs(self, nums, res, pos, remain):
+        if len(nums) == pos:
+            if remain == 0:
+                res += 1
+            else:
+                return
+        self.dfs(nums, res, pos+1, remain-nums[pos])
+        self.dfs(nums, res, pos+1, remain+nums[pos])
+
 
 if __name__ == "__main__":
     a = [1, 1, 1, 1, 1]
     s = 3
-    print(Solution().findTargetSumWays(a, s))
+    print(Solution().findTargetSumWays2(a, s))
 
 
 
