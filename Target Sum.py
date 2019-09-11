@@ -12,6 +12,12 @@ class Solution:
         return dp[target]
 
     def findTargetSumWays2(self, nums, S):
+        """
+        Time limit exceeded.
+        :param nums:
+        :param S:
+        :return:
+        """
         self.res = 0
         self.dfs(nums, 0, S)
         return self.res
@@ -20,8 +26,8 @@ class Solution:
         if len(nums) == pos:
             if remain == 0:
                 self.res += 1
-            else:
-                return
+            # 这里的return比较重要，不能放在else里，只要是nums的长度等于pos就返回
+            return
         self.dfs(nums, pos+1, remain-nums[pos])
         self.dfs(nums, pos+1, remain+nums[pos])
 
@@ -29,7 +35,7 @@ class Solution:
 if __name__ == "__main__":
     a = [1, 1, 1, 1, 1]
     s = 3
-    # print(Solution().findTargetSumWays2(a, s))
+    print(Solution().findTargetSumWays2(a, s))
     b = [1, 2, 3, 4, 5]
     t = 3
     print(Solution().findTargetSumWays(b, t))
