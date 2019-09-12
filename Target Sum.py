@@ -31,14 +31,32 @@ class Solution:
         self.dfs(nums, pos+1, remain-nums[pos])
         self.dfs(nums, pos+1, remain+nums[pos])
 
+    def findTargetSumWays3(self, nums, S):
+        total = sum(nums)
+        if total < S or (total + S) % 2 == 1:
+            return 0
+        target = (S + total) // 2
+        dp = [[0] * (target + 1) for _ in range(len(nums) + 1)]
+        dp[0][0] = 1
+        for i in range(1, len(nums) + 1):
+            dp[i][0] = 1
+        for i in range(1, len(nums) + 1):
+            for j in range(target + 1):
+                dp[i][j] = dp[i - 1][j]
+                if j >= nums[i - 1]:
+                    dp[i][j] += dp[i - 1][j - nums[i - 1]]
+        return dp[len(nums)][target]
+
 
 if __name__ == "__main__":
-    a = [1, 1, 1, 1, 1]
-    s = 3
-    print(Solution().findTargetSumWays2(a, s))
+    # a = [1, 1, 1, 1, 1]
+    # s = 3
+    # print(Solution().findTargetSumWays2(a, s))
     b = [1, 2, 3, 4, 5]
     t = 3
     print(Solution().findTargetSumWays(b, t))
+    print(Solution().findTargetSumWays3(b, t))
+
 
 
 
