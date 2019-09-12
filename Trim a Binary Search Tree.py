@@ -5,6 +5,9 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def trimBST(self, root: TreeNode, L, R):
-        
+        if not root:
+            return
+

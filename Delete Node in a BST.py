@@ -28,4 +28,22 @@ class Solution:
         return root
 
 
+if __name__ == "__main__":
+    node2 = TreeNode(2)
+    node3 = TreeNode(3)
+    node4 = TreeNode(4)
+    node5 = TreeNode(5)
+    node6 = TreeNode(6)
+    node7 = TreeNode(7)
+
+    node5.left = node3
+    node5.right = node6
+
+    node3.left = node2
+    node3.right = node4
+
+    node6.right = node7
+
+    print(Solution().deleteNode(node5, 3))
+
 
