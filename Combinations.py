@@ -1,7 +1,7 @@
 class Solution:
     def combine(self, n, k):
         res = []
-        self.dfs2(res, n, k, [], 1)
+        self.dfs(res, n, k, [], 1)
         return res
 
     def dfs(self, res, n, k, out, start):
