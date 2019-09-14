@@ -20,6 +20,56 @@ class LevelOrder:
         self.dfs(res, root.left, level+1)
         self.dfs(res, root.right, level+1)
 
+    def bfs(self, root):
+        if not root:
+            return
+        queue = [root]
+        res = []
+        while queue:
+            node = queue.pop(0)
+            res.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        return res
+
+    def bfs2(self, root):
+        if not root:
+            return
+        queue = []
+        node = root
+        queue.append(node)
+        while queue:
+            node = queue.pop(0)
+            print(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    def zigzag_bfs(self, root):
+        if not root:
+            return
+        queue = [root]
+        res = []
+        level = 1
+        while queue:
+            node = queue.pop(0)
+            res.append(node.val)
+            if level % 2 == 0:
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            else:
+                if node.right:
+                    queue.append(node.right)
+                if node.left:
+                    queue.append(node.left)
+            level += 1
+        return res
+
 
 if __name__ == "__main__":
     node1 = TreeNode(1)
@@ -42,4 +92,8 @@ if __name__ == "__main__":
     node5.right = node8
 
     print(LevelOrder().level_order(node1))
+    print(LevelOrder().bfs(node1))
+    print(LevelOrder().zigzag_bfs(node1))
+
+
 
