@@ -51,23 +51,28 @@ class LevelOrder:
     def zigzag_bfs(self, root):
         if not root:
             return
-        queue = [root]
+        cur_level = []
+        next_level = []
         res = []
-        level = 1
-        while queue:
-            node = queue.pop(0)
+        level = True
+        cur_level.append(root)
+        while cur_level:
+            node = cur_level.pop()
             res.append(node.val)
-            if level % 2 == 0:
+            if level:
                 if node.left:
-                    queue.append(node.left)
+                    next_level.append(node.left)
                 if node.right:
-                    queue.append(node.right)
+                    next_level.append(node.right)
             else:
                 if node.right:
-                    queue.append(node.right)
+                    next_level.append(node.right)
                 if node.left:
-                    queue.append(node.left)
-            level += 1
+                    next_level.append(node.left)
+
+            if len(cur_level) == 0:
+                level = not level
+                cur_level, next_level = next_level, cur_level
         return res
 
 
