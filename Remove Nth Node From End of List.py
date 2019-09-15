@@ -22,6 +22,22 @@ class Solution:
         cur.next = cur.next.next
         return head
 
+    def one_pass_solution(self, head, n):
+        if not head:
+            return
+        start = ListNode(0)
+        start.next = head
+
+        slow = start
+        fast = start
+        for i in range(n):
+            fast = fast.next
+        while fast:
+            slow = slow.next
+            fast = fast.next
+        slow.next = slow.next.next
+        return start.next
+
 
 if __name__ == "__main__":
     node1 = ListNode(1)
