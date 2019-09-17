@@ -3,6 +3,12 @@ from collections import Counter
 
 class Solution:
     def longestSubstring(self, s, k):
+        """
+        Wrong answer
+        :param s:
+        :param k:
+        :return:
+        """
         cnt = Counter(s)
         res = 0
         temp = 0
