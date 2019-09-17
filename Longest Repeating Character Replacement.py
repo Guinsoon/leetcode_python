@@ -1,2 +1,5 @@
+from collections import Counter
+
+
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
+    def characterReplacement(self, s, k):
