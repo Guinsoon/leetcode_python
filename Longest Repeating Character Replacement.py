@@ -3,6 +3,8 @@ from collections import Counter
 
 class Solution:
     def characterReplacement(self, s, k):
+        if not s:
+            return 0
         lo = hi = 0
         counter = Counter()
         for hi in range(len(s)):
