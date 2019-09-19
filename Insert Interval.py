@@ -8,6 +8,14 @@
 
 class Solution:
     def insert(self, intervals, newInterval):
+        if not intervals:
+            return [newInterval]
+        # if newInterval[1] < intervals[0][0]:
+        #     return [newInterval] + intervals
+        # if newInterval[0] > intervals[-1][1]:
+        #     return intervals + [newInterval]
+        # if newInterval[0] < intervals[0][0] and newInterval[1] > intervals[-1][1]:
+        #     return [newInterval]
         low = 0
         high = 0
         for item in intervals:
@@ -15,8 +23,8 @@ class Solution:
                 low = intervals.index(item)
             if item[0] <= newInterval[1] <= item[1]:
                 high = intervals.index(item)
-        min_item = min(newInterval[0], intervals[low[0]])
-        max_item = max(newInterval[1], intervals[high[1]])
+        min_item = min(newInterval[0], intervals[low][0])
+        max_item = max(newInterval[1], intervals[high][1])
 
         res = []
         i = 0
