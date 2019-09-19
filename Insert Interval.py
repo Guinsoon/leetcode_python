@@ -19,5 +19,20 @@ class Solution:
         max_item = max(newInterval[1], intervals[high[1]])
 
         res = []
-        for item in intervals:
-            if
+        i = 0
+        while i < len(intervals):
+            if i < low or i > high:
+                res.append(intervals[i])
+                i += 1
+            else:
+                if i == low:
+                    res.append([min_item, max_item])
+                while i <= high:
+                    i += 1
+        return res
+
+
+if __name__ == "__main__":
+    a = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
+    b = [4, 8]
+    print(Solution().insert(a, b))
