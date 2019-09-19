@@ -39,6 +39,9 @@ class Solution:
                     i += 1
         return res
 
+    def insert2(self, intervals, newInterval):
+
+
 
 if __name__ == "__main__":
     a = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
