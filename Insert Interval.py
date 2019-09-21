@@ -8,6 +8,12 @@
 
 class Solution:
     def insert(self, intervals, newInterval):
+        """
+        Wrong answer
+        :param intervals:
+        :param newInterval:
+        :return:
+        """
         if not intervals:
             return [newInterval]
         low = -1
