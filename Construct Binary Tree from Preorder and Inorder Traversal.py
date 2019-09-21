@@ -16,4 +16,10 @@ class TreeNode:
 
 class Solution:
     def buildTree(self, preorder, inorder):
-        pass
+        root = TreeNode(preorder[0])
+        idx = inorder.index(preorder[0])
+        root.left = self.buildTree([i for i in inorder[:idx] if i in preorder], inorder[:idx])
+        root.right = self.buildTree([i for i in inorder[idx:] if i in preorder], inorder[idx:])
+        return root
+
+
