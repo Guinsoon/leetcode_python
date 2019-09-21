@@ -11,5 +11,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+    def buildTree(self, preorder, inorder):
+        pass
