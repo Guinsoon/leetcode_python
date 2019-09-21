@@ -16,10 +16,20 @@ class TreeNode:
 
 class Solution:
     def buildTree(self, preorder, inorder):
+        if not preorder or not inorder:
+            return
         root = TreeNode(preorder[0])
         idx = inorder.index(preorder[0])
-        root.left = self.buildTree([i for i in inorder[:idx] if i in preorder], inorder[:idx])
-        root.right = self.buildTree([i for i in inorder[idx:] if i in preorder], inorder[idx:])
+        root.left = self.buildTree([i for i in preorder if i in inorder[:idx]], inorder[:idx])
+        root.right = self.buildTree([i for i in preorder if i in inorder[idx+1:]], inorder[idx+1:])
         return root
+
+
+if __name__ == "__main__":
+    pre = [3, 9, 20, 15, 7]
+    ino = [9, 3, 15, 20, 7]
+
+    print(Solution().buildTree(pre, ino))
+
 
 
