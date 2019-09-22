@@ -35,6 +35,17 @@ class Solution:
         is_same = [a == b for a, b in zip(nums, sorted(nums))]
         return 0 if all(is_same) else len(nums) - is_same.index(False) - is_same[::-1].index(False)
 
+    def fidUnsortedSubarray2(self, nums):
+        end = -2
+        start = -1
+        min_num = nums[-1]
+        max_num = nums[0]
+        for i in range(1, len(nums)):
+            max_num = max(max_num, nums[i])
+            min_num = min(min_num, nums[len(nums)-1-i])
+            if nums[i] < max_num:
+                end = i
+            if nums[len(nums)-1-i] < min_num
 
 if __name__ == "__main__":
     a = [2, 6, 4, 8, 10, 9, 15]
