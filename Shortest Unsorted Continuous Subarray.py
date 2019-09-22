@@ -31,19 +31,34 @@ class Solution:
         else:
             return end-start+1
 
-
     def findUnsortedSubarray2(self, nums):
-        pass
-
+        if not nums:
+            return 0
+        start = None
+        end = None
+        for i in range(len(nums)-1):
+            if nums[i+1] < nums[i]:
+                start = i
+                break
+        for j in range(len(nums)-1, 0, -1):
+            if nums[j-1] >= nums[j]:
+                end = j
+                break
+        if start is None:
+            return 0
+        return end-start+1
 
 
 if __name__ == "__main__":
     a = [2, 6, 4, 8, 10, 9, 15]
-    print(Solution().findUnsortedSubarray(a))
+    print(Solution().findUnsortedSubarray2(a))
     b = [1, 3, 2, 2, 2]
-    print(Solution().findUnsortedSubarray(b))
+    print(Solution().findUnsortedSubarray2(b))
     c = [1, 2, 3, 3, 3]
-    print(Solution().findUnsortedSubarray(c))
+    print(Solution().findUnsortedSubarray2(c))
+    d = [1, 3, 2, 3, 3]
+    print(Solution().findUnsortedSubarray(d))
+
 
 
 
