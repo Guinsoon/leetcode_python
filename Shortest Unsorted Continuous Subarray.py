@@ -17,6 +17,9 @@ class Solution:
                 if start is None:
                     start = i
                 end = i + 1
+            elif nums[i+1] == nums[i]:
+                if start is not None:
+                    end = i + 1
 
         if start is None:
             return 0
@@ -29,6 +32,9 @@ if __name__ == "__main__":
     print(Solution().findUnsortedSubarray(a))
     b = [1, 3, 2, 2, 2]
     print(Solution().findUnsortedSubarray(b))
+    c = [1, 2, 3, 3, 3]
+    print(Solution().findUnsortedSubarray(c))
+
 
 
 
