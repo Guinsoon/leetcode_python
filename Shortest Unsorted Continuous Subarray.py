@@ -32,21 +32,8 @@ class Solution:
             return end-start+1
 
     def findUnsortedSubarray2(self, nums):
-        if not nums:
-            return 0
-        start = None
-        end = None
-        for i in range(len(nums)-1):
-            if nums[i+1] < nums[i]:
-                start = i
-                break
-        for j in range(len(nums)-1, 0, -1):
-            if nums[j-1] >= nums[j]:
-                end = j
-                break
-        if start is None:
-            return 0
-        return end-start+1
+        is_same = [a == b for a, b in zip(nums, sorted(nums))]
+        return 0 if all(is_same) else len(nums) - is_same.index(False) - is_same[::-1].index(False)
 
 
 if __name__ == "__main__":
