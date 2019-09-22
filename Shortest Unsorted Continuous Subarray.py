@@ -19,10 +19,18 @@ class Solution:
                 end = i + 1
 
         if start is None:
-            return len(nums)
+            return 0
         else:
             return end-start+1
 
-i
+
+if __name__ == "__main__":
+    a = [2, 6, 4, 8, 10, 9, 15]
+    print(Solution().findUnsortedSubarray(a))
+    b = [1, 3, 2, 2, 2]
+    print(Solution().findUnsortedSubarray(b))
+
+
+
 
 
