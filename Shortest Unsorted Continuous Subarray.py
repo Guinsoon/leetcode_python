@@ -8,6 +8,11 @@
 
 class Solution:
     def findUnsortedSubarray(self, nums):
+        """
+        Wrong answer
+        :param nums:
+        :return:
+        """
         if not nums:
             return 0
         start = None
@@ -25,6 +30,11 @@ class Solution:
             return 0
         else:
             return end-start+1
+
+
+    def findUnsortedSubarray2(self, nums):
+        pass
+
 
 
 if __name__ == "__main__":
