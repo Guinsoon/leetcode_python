@@ -35,7 +35,7 @@ class Solution:
         is_same = [a == b for a, b in zip(nums, sorted(nums))]
         return 0 if all(is_same) else len(nums) - is_same.index(False) - is_same[::-1].index(False)
 
-    def fidUnsortedSubarray2(self, nums):
+    def findUnsortedSubarray3(self, nums):
         end = -2
         start = -1
         min_num = nums[-1]
@@ -45,17 +45,20 @@ class Solution:
             min_num = min(min_num, nums[len(nums)-1-i])
             if nums[i] < max_num:
                 end = i
-            if nums[len(nums)-1-i] < min_num
+            if nums[len(nums)-1-i] > min_num:
+                start = len(nums)-1-i
+        return end-start+1
+
 
 if __name__ == "__main__":
     a = [2, 6, 4, 8, 10, 9, 15]
-    print(Solution().findUnsortedSubarray2(a))
+    print(Solution().findUnsortedSubarray3(a))
     b = [1, 3, 2, 2, 2]
-    print(Solution().findUnsortedSubarray2(b))
+    print(Solution().findUnsortedSubarray3(b))
     c = [1, 2, 3, 3, 3]
-    print(Solution().findUnsortedSubarray2(c))
+    print(Solution().findUnsortedSubarray3(c))
     d = [1, 3, 2, 3, 3]
-    print(Solution().findUnsortedSubarray(d))
+    print(Solution().findUnsortedSubarray3(d))
 
 
 
