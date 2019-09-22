@@ -5,18 +5,28 @@ class TreeNode:
         self.right = None
 
 
-class BFS:
-    def bfs_queue(self, root):
+class Traversal:
+    def bfs(self, root):
         if not root:
             return
         queue = [root]
+        res = []
         while queue:
             node = queue.pop(0)
-            print(node.val)
+            res.append(node.val)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
+        return res
+
+    def dfs(self, root, res):
+        if not root:
+            return
+        res.append(root.val)
+        self.dfs(root.left, res)
+        self.dfs(root.right, res)
+        return res
 
 
 if __name__ == "__main__":
@@ -39,4 +49,6 @@ if __name__ == "__main__":
     node5.left = node7
     node5.right = node8
 
-    print(BFS().bfs_queue(node1))
+    print(Traversal().bfs(node1))
+    print(Traversal().dfs(node1, []))
+
