@@ -56,3 +56,22 @@ class Solution:
         if not root:
             return 0
         return 1 + self.getDepth(root.left)
+
+
+if __name__ == "__main__":
+    node1 = TreeNode(1)
+    node2 = TreeNode(2)
+    node3 = TreeNode(3)
+    node4 = TreeNode(4)
+    node5 = TreeNode(5)
+    node6 = TreeNode(6)
+
+    node1.left = node2
+    node1.right = node3
+
+    node2.left = node4
+    node2.right = node5
+
+    node3.left = node6
+
+    print(Solution().countNodes2(node1))
