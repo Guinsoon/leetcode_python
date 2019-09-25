@@ -12,7 +12,7 @@ class Solution:
         if len(result) % 2 != 0:
             return result[len(result) // 2]
         else:
-            return (result[len(result) // 2] + result[len(result) // 2 + 1]) // 2
+            return (result[len(result) // 2-1] + result[len(result) // 2]) / 2
 
     def merge(self, nums1, nums2):
         res = []
@@ -22,7 +22,7 @@ class Solution:
                 res.append(nums1[i])
                 i += 1
             else:
-                res.append(nums1[j])
+                res.append(nums2[j])
                 j += 1
         if i < len(nums1):
             res += nums1[i:]
@@ -32,6 +32,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    a = [1, 3]
-    b = [2]
+    a = [1, 2]
+    b = [3, 4]
     print(Solution().findMedianSortedArrays(a, b))
