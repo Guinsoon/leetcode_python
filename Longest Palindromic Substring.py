@@ -15,9 +15,13 @@ class Solution:
         for i in range(len(is_same)):
             if is_same[i] is True:
                 res += s[i]
+        if res == '':
+            return s[0]
         return res
 
 
 if __name__ == "__main__":
     s = 'babad'
     print(Solution().longestPalindrome(s))
+    print(Solution().longestPalindrome('ac'))
+
