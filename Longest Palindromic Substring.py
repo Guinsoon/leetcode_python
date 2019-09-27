@@ -8,16 +8,21 @@
 
 class Solution:
     def longestPalindrome(self, s):
-        if not s:
-            return
-        is_same = [a == b for a, b in zip(s, s[::-1])]
-        res = ''
-        for i in range(len(is_same)):
-            if is_same[i] is True:
-                res += s[i]
-        if res == '':
-            return s[0]
+        res = ""
+        for i in range(len(s)):
+            temp = self.helper(s, i, i)
+            if len(temp) > len(res):
+                res = temp
+            temp = self.helper(s, i, i+1)
+            if len(temp) > len(res):
+                res = temp
         return res
+
+    def helper(self, s, l, r):
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1
+            r += 1
+        return s[l+1, r]
 
 
 if __name__ == "__main__":
