@@ -31,11 +31,11 @@ class Solution:
             new_string += s[i]
         new_string += "#"
         res = ""
-        for i in range(len(s)):
-            temp = self.helper(s, i, i)
+        for i in range(len(new_string)):
+            temp = self.helper(new_string, i, i)
             if len(temp) > len(res):
                 res = temp
-        return res
+        return "".join([i for i in res if i != "#"])
 
 
 if __name__ == "__main__":
