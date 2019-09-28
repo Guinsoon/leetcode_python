@@ -8,15 +8,21 @@
 
 class Solution:
     def countSubstrings(self, s: str) -> int:
+        if not s:
+            return 1
         res = []
+        out = -1
         self.dfs(s, res, "", 0)
-        return res
+        for item in res:
+            if self.is_palindromic(item):
+                out += 1
+        return out
 
     def dfs(self, s, res, temp, idx):
         res.append(temp)
         for i in range(idx, len(s)):
             temp += s[i]
-            self.dfs(s, res, temp, idx+1)
+            self.dfs(s, res, temp, i+1)
             temp = temp[:-1]
 
     def is_palindromic(self, s):
