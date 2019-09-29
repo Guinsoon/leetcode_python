@@ -13,6 +13,7 @@ class Solution:
         res = []
         out = -1
         self.dfs(s, res, "", 0)
+        print(res)
         for item in res:
             if self.is_palindromic(item):
                 out += 1
@@ -32,4 +33,6 @@ class Solution:
 if __name__ == "__main__":
     s = 'abc'
     print(Solution().countSubstrings(s))
+    print(Solution().countSubstrings("aaa"))
+
 
