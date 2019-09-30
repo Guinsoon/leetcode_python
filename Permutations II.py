@@ -9,15 +9,16 @@
 class Solution:
     def permuteUnique(self, nums):
         res = []
-        self.dfs(res, [], nums)
+        self.dfs(res, [], nums, 0)
         return res
 
-    def dfs(self, res, temp, nums):
+    def dfs(self, res, temp, nums, idx):
         if len(temp) == len(nums):
             res.append(temp[:])
-        for i in range(len(nums)):
+            return
+        for i in range(idx, len(nums)):
             temp.append(nums[i])
-            self.dfs(res, temp, nums)
+            self.dfs(res, temp, nums, i+1)
             temp.pop()
 
 
