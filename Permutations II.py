@@ -9,17 +9,23 @@
 class Solution:
     def permuteUnique(self, nums):
         res = []
-        self.dfs(res, [], nums, 0)
-        return res
+        output = []
+        self.dfs(res, [], nums)
+        for item in res:
+            ans = list(map(lambda x: nums[x], item))
+            if ans not in output:
+                output.append(ans)
+        return output
 
-    def dfs(self, res, temp, nums, idx):
+    def dfs(self, res, temp, nums):
         if len(temp) == len(nums):
             res.append(temp[:])
             return
-        for i in range(idx, len(nums)):
-            temp.append(nums[i])
-            self.dfs(res, temp, nums, i+1)
-            temp.pop()
+        for i in range(len(nums)):
+            if i not in temp:
+                temp.append(i)
+                self.dfs(res, temp, nums)
+                temp.pop()
 
 
 if __name__ == "__main__":
