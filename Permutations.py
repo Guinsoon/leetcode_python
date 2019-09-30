@@ -20,3 +20,7 @@ class Solution:
                 temp.append(num)
                 self.dfs(res, temp, nums)
                 temp.pop()
+
+
+if __name__ == "__main__":
+    print(Solution().permute([1, 2, 3]))

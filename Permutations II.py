@@ -15,12 +15,11 @@ class Solution:
     def dfs(self, res, temp, nums):
         if len(temp) == len(nums):
             res.append(temp[:])
-        for num in nums:
-            if num not in temp:
-                temp.append(num)
-                self.dfs(res, temp, nums)
-                temp.pop()
+        for i in range(len(nums)):
+            temp.append(nums[i])
+            self.dfs(res, temp, nums)
+            temp.pop()
 
 
 if __name__ == "__main__":
-    print(Solution().permuteUnique([1, 2, 3]))
+    print(Solution().permuteUnique([1, 1, 2]))
