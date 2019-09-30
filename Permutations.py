@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 @author: Nicotine
-@time: 2019/9/30 上午8:29
+@time: 2019/9/30 上午8:41
 @desc: Bigo
 """
 
 
 class Solution:
-    def permuteUnique(self, nums):
+    def permute(self, nums):
         res = []
         self.dfs(res, [], nums)
         return res
@@ -20,7 +20,3 @@ class Solution:
                 temp.append(num)
                 self.dfs(res, temp, nums)
                 temp.pop()
-
-
-if __name__ == "__main__":
-    print(Solution().permuteUnique([1, 2, 3]))
