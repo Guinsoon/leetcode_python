@@ -28,7 +28,18 @@ class PreOrder:
         self.helper(root.right, res)
 
     def pre_order_stack(self, root):
-        pass
+        if not root:
+            return []
+        res = [root.val]
+        stack = []
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
+        return res
 
 
 if __name__ == "__main__":
@@ -53,3 +64,4 @@ if __name__ == "__main__":
 
     print(PreOrder().pre_order(node1))
     print(PreOrder().pre_order2(node1))
+    print(PreOrder().pre_order_stack(node1))
