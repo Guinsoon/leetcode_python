@@ -22,6 +22,22 @@ class Solution:
                (root.right and root.right.val >= root.val) and\
                self.isValidBST(root.left) and self.isValidBST(root.right)
 
+    def inorder(self, root):
+        if not root:
+            return True
+        stack = []
+        pre = None
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            if pre and pre.val >= root.val:
+                return False
+            pre = root
+            root = root.right
+        return True
+
 
 if __name__ == "__main__":
     node1 = TreeNode(1)
