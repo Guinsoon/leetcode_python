@@ -30,14 +30,14 @@ class PreOrder:
     def pre_order_stack(self, root):
         if not root:
             return []
-        res = [root.val]
+        res = []
         stack = []
         while stack or root:
             while root:
+                res.append(root.val)
                 stack.append(root)
                 root = root.left
             root = stack.pop()
-            res.append(root.val)
             root = root.right
         return res
 
