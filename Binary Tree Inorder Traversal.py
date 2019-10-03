@@ -19,10 +19,15 @@ class Solution:
         if not root:
             return
         res = []
-        self.inorderTraversal(root.left)
-        res.append(root.val)
-        self.inorderTraversal(root.right)
+        self.helper(root, res)
         return res
+
+    def helper(self, root, res):
+        if not root:
+            return
+        self.helper(root.left, res)
+        res.append(root.val)
+        self.helper(root.right, res)
 
 
 if __name__ == "__main__":
