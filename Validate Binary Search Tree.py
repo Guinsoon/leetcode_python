@@ -16,11 +16,7 @@ class TreeNode:
 
 class Solution:
     def isValidBST(self, root):
-        if not root:
-            return False
-        return (root.left and root.left.val <= root.val) or\
-               (root.right and root.right.val >= root.val) and\
-               self.isValidBST(root.left) and self.isValidBST(root.right)
+        pass
 
     def inorder(self, root):
         if not root:
