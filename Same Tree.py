@@ -24,6 +24,12 @@ class Solution:
             return False
         return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
+    def isSameTree2(self, p, q):
+        if p and q:
+            return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        else:
+            return p == q
+
 
 if __name__ == "__main__":
     node1 = TreeNode(1)
