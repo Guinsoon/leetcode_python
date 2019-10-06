@@ -16,7 +16,18 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root):
-
+        if not root:
+            return True
+        res = []
+        stack = []
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
+        return res[::-1] == res
 
 
 if __name__ == "__main__":
