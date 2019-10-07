@@ -18,16 +18,14 @@ class Solution:
     def isSymmetric(self, root):
         if not root:
             return True
-        res = []
-        stack = []
-        while root or stack:
-            while root:
-                stack.append(root)
-                root = root.left
-            root = stack.pop()
-            res.append(root.val)
-            root = root.right
-        return res[::-1] == res
+        return self.helper(root.left, root.right)
+
+    def helper(self, left, right):
+        if not left or not right:
+            return left == right
+        if left.val != right.val:
+            return False
+        return self.helper(left.left, right.right) and self.helper(left.right, right.left)
 
 
 if __name__ == "__main__":
