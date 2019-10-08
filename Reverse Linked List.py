@@ -16,6 +16,16 @@ class Solution:
             pHead = temp
         return last
 
+    def reverseLinkedList2(self, head):
+        prev = None
+        cur = head
+        while cur:
+            temp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = temp
+        return prev
+
 
 if __name__ == "__main__":
     node1 = ListNode(1)
