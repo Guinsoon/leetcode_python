@@ -29,7 +29,10 @@ def insertion_sort(nums):
     :param nums: raw array
     :return: sorted array
     """
-    for i in range(1, len(nums)):
+    n = len(nums)
+    if n == 1:
+        return nums
+    for i in range(1, n):
         cur = nums[i]
         pre_index = i - 1
         while pre_index >= 0 and nums[pre_index] > cur:
