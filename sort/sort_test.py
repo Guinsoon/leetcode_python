@@ -30,8 +30,6 @@ def insertion_sort(nums):
     :return: sorted array
     """
     n = len(nums)
-    if n == 1:
-        return nums
     for i in range(1, n):
         cur = nums[i]
         pre_index = i - 1
