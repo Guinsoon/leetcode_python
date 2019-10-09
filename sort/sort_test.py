@@ -31,12 +31,12 @@ def insertion_sort(nums):
     """
     n = len(nums)
     for i in range(1, n):
-        cur = nums[i]
-        pre_index = i - 1
-        while pre_index >= 0 and nums[pre_index] > cur:
-            nums[pre_index+1] = nums[pre_index]
-            pre_index -= 1
-        nums[pre_index+1] = cur
+        cur = i
+        pre = i - 1
+        while pre >= 0 and nums[pre] > nums[cur]:
+            nums[pre+1] = nums[pre]
+            pre -= 1
+        nums[pre+1] = nums[cur]
     return nums
 
 
