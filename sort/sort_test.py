@@ -42,6 +42,10 @@ def insertion_sort(nums):
     return nums
 
 
+def selection_sort(nums):
+    pass
+
+
 array = [3, 2, 1, 15, 26, 72, 36, 10]
 print(bubble_sort(array))
 print(insertion_sort(array))
