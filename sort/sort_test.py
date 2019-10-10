@@ -23,7 +23,7 @@ def bubble_sort(nums):
 
 def insertion_sort(nums):
     """
-    Unstable sort
+    Stable sort
     Time Complexity: O(n2)
     Space Complexity: O(1)
     :param nums: raw array
