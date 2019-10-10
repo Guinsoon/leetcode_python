@@ -41,7 +41,11 @@ def insertion_sort(nums):
 
 
 def selection_sort(nums):
-    pass
+    min_idx = 0
+    for i in range(len(nums)):
+        for j in range(1, len(nums)):
+            if nums[j] < nums[min_idx]:
+                min_idx = j
 
 
 array = [3, 2, 1, 15, 26, 72, 36, 10]
