@@ -41,6 +41,13 @@ def insertion_sort(nums):
 
 
 def selection_sort(nums):
+    """
+    Unstable sort
+    Time Complexity: O(n2)
+    Space Complexity: O(1)
+    :param nums: raw array
+    :return: sorted array
+    """
     for i in range(len(nums)-1):
         min_idx = i
         for j in range(i+1, len(nums)):
