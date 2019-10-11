@@ -15,8 +15,5 @@ class TreeNode:
 
 
 class Solution:
-    def generateTrees(self, n):
-        pass
-
-    def dfs(self, start, end):
+    def isValidBST(self, root: TreeNode) -> bool:
         pass
