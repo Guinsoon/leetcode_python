@@ -58,6 +58,13 @@ def selection_sort(nums):
 
 
 def merge_sort(nums):
+    """
+    Stable sort
+    Time Complexity: O(nlog2n)
+    Space Complexity: O(nlog2n)
+    :param nums: raw array
+    :return: sorted array
+    """
     if len(nums) < 2:
         return nums
     mid = len(nums) // 2
