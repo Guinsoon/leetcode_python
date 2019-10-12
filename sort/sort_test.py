@@ -57,9 +57,31 @@ def selection_sort(nums):
     return nums
 
 
+def merge_sort(nums):
+    if len(nums) < 2:
+        return nums
+    mid = len(nums) // 2
+    return merge(merge_sort(nums[:mid]), merge_sort(nums[mid:]))
+
+
+def merge(left, right):
+    res = []
+    while len(left) > 0 and len(right) > 0:
+        if left[0] > right[0]:
+            res.append(right.pop(0))
+        else:
+            res.append(left.pop(0))
+    if left:
+        res += left
+    if right:
+        res += right
+    return res
+
+
 array = [3, 2, 1, 15, 26, 72, 36, 10]
 print(bubble_sort(array))
 print(insertion_sort(array))
 print(selection_sort(array))
+print(merge_sort(array))
 
 
