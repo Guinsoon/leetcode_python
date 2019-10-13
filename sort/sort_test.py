@@ -121,7 +121,8 @@ def partition_last(nums, left, right):
 
 
 def partition_first(nums, left, right):
-    pass
+    pivot = nums[left]
+
 
 
 array = [3, 2, 1, 15, 26, 72, 36, 10]
