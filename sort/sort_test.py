@@ -87,13 +87,20 @@ def merge(left, right):
 
 def quick_sort(nums, low, high):
     if low < high:
-        pivot = partition(nums, low, high)
+        pivot = partition_last(nums, low, high)
         quick_sort(nums, low, pivot-1)
         quick_sort(nums, pivot+1, high)
     return nums
 
 
-def partition(nums, left, right):
+def partition_last(nums, left, right):
+    """
+    This function takes last element as pivot.
+    :param nums: raw array
+    :param left: left index of nums
+    :param right: right index of nums
+    :return: the index of pivot.
+    """
     pivot = nums[right]
     index = left - 1
     for i in range(left, right):
