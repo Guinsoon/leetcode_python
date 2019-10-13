@@ -109,5 +109,7 @@ print(bubble_sort(array))
 print(insertion_sort(array))
 print(selection_sort(array))
 print(merge_sort(array))
+print(quick_sort(array, 0, len(array)-1))
+
 
 
