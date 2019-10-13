@@ -85,6 +85,25 @@ def merge(left, right):
     return res
 
 
+def quick_sort(nums, low, high):
+    if low < high:
+        pivot = partition(nums, low, high)
+        quick_sort(nums, low, pivot-1)
+        quick_sort(nums, pivot+1, high)
+    return nums
+
+
+def partition(nums, left, right):
+    pivot = nums[right]
+    index = left - 1
+    for i in range(left, right):
+        if nums[i] < pivot:
+            index += 1
+            nums[i], nums[index] = nums[index], nums[i]
+    nums[index+1], pivot = pivot, nums[index+1]
+    return index+1
+
+
 array = [3, 2, 1, 15, 26, 72, 36, 10]
 print(bubble_sort(array))
 print(insertion_sort(array))
