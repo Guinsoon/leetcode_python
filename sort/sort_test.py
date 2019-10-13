@@ -61,7 +61,7 @@ def merge_sort(nums):
     """
     Stable sort
     Time Complexity: O(nlog2n)
-    Space Complexity: O(nlog2n)
+    Space Complexity: O(n)
     :param nums: raw array
     :return: sorted array
     """
@@ -86,6 +86,15 @@ def merge(left, right):
 
 
 def quick_sort(nums, low, high):
+    """
+    Unstable sort
+    Time Complexity: O(nlog2n)
+    Space Complexity: O(nlog2n)
+    :param nums: raw array
+    :param low:  left index of nums
+    :param high:  right index of nums
+    :return: sorted nums
+    """
     if low < high:
         pivot = partition_last(nums, low, high)
         quick_sort(nums, low, pivot-1)
