@@ -120,6 +120,10 @@ def partition_last(nums, left, right):
     return index+1
 
 
+def partition_first(nums, left, right):
+    pass
+
+
 array = [3, 2, 1, 15, 26, 72, 36, 10]
 print(bubble_sort(array))
 print(insertion_sort(array))
