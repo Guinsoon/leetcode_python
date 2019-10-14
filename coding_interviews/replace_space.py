@@ -8,6 +8,11 @@
 
 class Solution:
     def replaceSpace(self, s):
+        blank_nums = 0
+        for i in s:
+            if i == " ":
+                blank_nums += 1
+
 
 
 
