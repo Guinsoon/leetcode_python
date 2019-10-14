@@ -8,6 +8,15 @@
 
 class Solution:
     def replaceSpace(self, s):
+        res = ""
         for item in s:
             if item == " ":
-                pass
+                res += "%20"
+            else:
+                res += item
+        return res
+
+
+if __name__ == "__main__":
+    strings = "We are happy"
+    print(Solution().replaceSpace(strings))
