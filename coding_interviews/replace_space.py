@@ -8,10 +8,12 @@
 
 class Solution:
     def replaceSpace(self, s):
-        blank_nums = 0
-        for i in s:
-            if i == " ":
-                blank_nums += 1
+        n = s.count(' ')
+        res = list(s)
+        res += [0] * 2 * n
+        p1 = len(s)-1
+        p2 = len(res)-1
+        while p1 != p2:
 
 
 
