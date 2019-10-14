@@ -121,6 +121,13 @@ def partition_last(nums, left, right):
 
 
 def partition_first(nums, left, right):
+    """
+    The function takes first element as pivot.
+    :param nums: raw array
+    :param left: left index of nums
+    :param right: right index of nums
+    :return: the index of pivot
+    """
     pivot = nums[left]
     index = left + 1
     for i in range(index, right+1):
