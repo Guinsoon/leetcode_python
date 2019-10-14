@@ -38,3 +38,4 @@ class Solution:
 if __name__ == "__main__":
     strings = "We are happy"
     print(Solution().replaceSpace(strings))
+    print(Solution().replaceSpace_slow(strings))
