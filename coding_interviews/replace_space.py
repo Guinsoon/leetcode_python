@@ -8,6 +8,10 @@
 
 class Solution:
     def replaceSpace(self, s):
+
+
+
+    def replaceSpace_slow(self, s):
         res = ""
         for item in s:
             if item == " ":
