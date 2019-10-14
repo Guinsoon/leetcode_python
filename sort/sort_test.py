@@ -96,7 +96,7 @@ def quick_sort(nums, low, high):
     :return: sorted nums
     """
     if low < high:
-        pivot = partition_last(nums, low, high)
+        pivot = partition_first(nums, low, high)
         quick_sort(nums, low, pivot-1)
         quick_sort(nums, pivot+1, high)
     return nums
@@ -122,7 +122,13 @@ def partition_last(nums, left, right):
 
 def partition_first(nums, left, right):
     pivot = nums[left]
-
+    index = left + 1
+    for i in range(index, right+1):
+        if nums[i] < pivot:
+            nums[i], nums[index] = nums[index], nums[i]
+            index -= 1
+    nums[index-1], pivot = pivot, nums[index-1]
+    return index-1
 
 
 array = [3, 2, 1, 15, 26, 72, 36, 10]
