@@ -14,4 +14,6 @@ class ListNode:
 
 class Solution:
     def printListFromTailToHead(self, listNode):
-        pass
+        if not listNode:
+            return []
+        res = []
