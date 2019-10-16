@@ -37,6 +37,8 @@ class Solution:
         :param listNode: input linked list
         :return: the value of reverse linked list
         """
-        pass
+        if listNode:
+            if listNode.next:
+                self.printListFromTailToHead(listNode.next)
 
 
