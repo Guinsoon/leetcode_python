@@ -17,3 +17,7 @@ class Solution:
         if not listNode:
             return []
         res = []
+        while listNode:
+            res.append(listNode.val)
+            listNode = listNode.next
+        return res[::-1]
