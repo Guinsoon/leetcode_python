@@ -37,8 +37,26 @@ class Solution:
         :param listNode: input linked list
         :return: the value of reverse linked list
         """
+        res = []
+        self.dfs(listNode, res)
+        return res
+
+    def dfs(self, listNode, res):
         if listNode:
             if listNode.next:
-                self.printListFromTailToHead(listNode.next)
+                self.dfs(listNode.next, res)
+            res.append(listNode.val)
+
+
+if __name__ == "__main__":
+    node1 = ListNode(1)
+    node2 = ListNode(2)
+    node3 = ListNode(3)
+
+    node1.next = node2
+    node2.next = node3
+
+    print(Solution().printListFromTailToHead2(node1))
+
 
 
