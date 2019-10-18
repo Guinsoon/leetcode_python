@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 @author: Nicotine
-@time: 2019/10/11 上午8:45
+@time: 2019/10/18 下午12:04
 @desc: Bigo
 """
 
 
-# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -15,5 +14,5 @@ class TreeNode:
 
 
 class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
+    def reConstructBinaryTree(self, pre, tin):
         pass
